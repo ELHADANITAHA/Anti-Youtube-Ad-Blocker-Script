@@ -6,8 +6,8 @@
 // @author       ELHADANI Taha
 // @match        https://www.youtube.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
-// @updateURL    https://github.com/ELHADANITAHA/Anti-Youtube-Ad-Blocker-Script/blob/main/Script.js
-// @downloadURL  https://github.com/ELHADANITAHA/Anti-Youtube-Ad-Blocker-Script/blob/main/Script.js
+// @updateURL    https://github.com/ELHADANITAHA/Anti-Youtube-Ad-Blocker-Script/blob/main/Youtube%20Anti%20Ad%20Blocker.user.js
+// @downloadURL  https://github.com/ELHADANITAHA/Anti-Youtube-Ad-Blocker-Script/blob/main/Youtube%20Anti%20Ad%20Blocker.user.js
 // @grant        none
 // ==/UserScript==
 
