@@ -1,19 +1,22 @@
 // ==UserScript==
-// @name         Youtube Anti Ad Blocker by Taha
+// @name         Remove Adblock Thing
 // @namespace    http://tampermonkey.net/
 // @version      1.0
-// @description  Removes Adblock Detection Alerts
+// @description  Youtube Anti Ad-blocker by Taha
 // @author       EL HADANI Taha
 // @match        https://www.youtube.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
-// @uploadURL  https://github.com/ELHADANITAHA/Anti-Youtube-Ad-Blocker-Script/edit/main/Script.js
-// @downloadURL  https://github.com/ELHADANITAHA/Anti-Youtube-Ad-Blocker-Script/edit/main/Script.js
+// @updateURL    https://github.com/ELHADANITAHA/Anti-Youtube-Ad-Blocker-Script/blob/main/Script.js
+// @downloadURL  https://github.com/ELHADANITAHA/Anti-Youtube-Ad-Blocker-Script/blob/main/Script.js
 // ==/UserScript==
 
 (function () {
+    // Config
     const adblocker = true;
     const removePopup = true;
     const debug = true;
+
+    // CODE
 
     const domainsToRemove = ['*.youtube-nocookie.com/*'];
     const jsonPathsToRemove = [
@@ -39,7 +42,7 @@
     let unpausedAfterSkip = 0;
     let pageRefreshed = false;
 
-    if (debug) console.log("Youtube Anti Ad Blocker by Taha: Script started");
+    if (debug) console.log("Youtube Anti Ad-blocke: Script started");
 
     setTimeout(() => {
         window.__ytplayer_adblockDetected = false;
@@ -47,7 +50,7 @@
         if (adblocker) addblocker();
         if (removePopup) popupRemover();
         if (removePopup) observer.observe(document.body, observerConfig);
-    }, 5000);
+    }, 5000); 
 
     function popupRemover() {
         removeJsonPaths(domainsToRemove, jsonPathsToRemove);
@@ -70,7 +73,7 @@
             }
 
             if (popup) {
-                if (debug) console.log("Youtube Anti Ad Blocker : Popup detected, removing...");
+                if (debug) console.log("Youtube Anti Ad-blocke: Popup detected, removing...");
 
                 if (popupButton) popupButton.click();
                 popup.remove();
@@ -83,13 +86,14 @@
                     }, 500);
                 }
 
-                if (debug) console.log("Youtube Anti Ad Blocker : Popup removed");
+                if (debug) console.log("Youtube Anti Ad-blocke: Popup removed");
             }
 
             if (!unpausedAfterSkip > 0) return;
 
             unPauseVideo(video1);
             unPauseVideo(video2);
+
 
             if (!pageRefreshed) {
                 location.reload();
@@ -129,7 +133,7 @@
                 view: window
             }));
             unpausedAfterSkip = 0;
-            if (debug) console.log("Youtube Anti Ad Blocker : Unpaused video using 'k' key");
+            if (debug) console.log("Youtube Anti Ad-blocke: Unpaused video using 'k' key");
         } else if (unpausedAfterSkip > 0) unpausedAfterSkip--;
     }
 
