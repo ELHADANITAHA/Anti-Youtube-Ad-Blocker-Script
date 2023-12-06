@@ -1,4 +1,5 @@
-// ==UserScript==
+// Click on the "Raw" Button after Installing Tampermonkey Extension 
+// ==UserScript== 
 // @name         Youtube Anti Ad-Blocker By Taha
 // @namespace    http://tampermonkey.net/
 // @version      1.0
