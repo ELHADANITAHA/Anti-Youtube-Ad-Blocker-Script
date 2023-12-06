@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Remove Adblock Thing
+// @name         Youtube Anti Ad-blocker
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Youtube Anti Ad-blocker by Taha
@@ -50,7 +50,7 @@
         if (adblocker) addblocker();
         if (removePopup) popupRemover();
         if (removePopup) observer.observe(document.body, observerConfig);
-    }, 5000); 
+    }, 5000);
 
     function popupRemover() {
         removeJsonPaths(domainsToRemove, jsonPathsToRemove);
