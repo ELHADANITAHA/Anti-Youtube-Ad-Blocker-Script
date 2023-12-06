@@ -6,15 +6,14 @@
 // @author       EL HADANI Taha
 // @match        https://www.youtube.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
+// @uploadURL  https://github.com/ELHADANITAHA/Anti-Youtube-Ad-Blocker-Script/edit/main/Script.js
+// @downloadURL  https://github.com/ELHADANITAHA/Anti-Youtube-Ad-Blocker-Script/edit/main/Script.js
 // ==/UserScript==
 
 (function () {
-    // Config
     const adblocker = true;
     const removePopup = true;
     const debug = true;
-
-    // CODE
 
     const domainsToRemove = ['*.youtube-nocookie.com/*'];
     const jsonPathsToRemove = [
@@ -48,7 +47,7 @@
         if (adblocker) addblocker();
         if (removePopup) popupRemover();
         if (removePopup) observer.observe(document.body, observerConfig);
-    }, 5000); // Adjust the delay as needed (5000 milliseconds in this example) --> Changeable
+    }, 5000);
 
     function popupRemover() {
         removeJsonPaths(domainsToRemove, jsonPathsToRemove);
@@ -92,10 +91,9 @@
             unPauseVideo(video1);
             unPauseVideo(video2);
 
-            // Refresh the page if it hasn't been refreshed yet
             if (!pageRefreshed) {
                 location.reload();
-                pageRefreshed = true; // Set the flag to true after refreshing
+                pageRefreshed = true;
             }
 
         }, 1000);
