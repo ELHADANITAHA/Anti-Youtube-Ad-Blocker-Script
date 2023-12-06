@@ -1,14 +1,12 @@
 // ==UserScript==
 // @name         Youtube Anti Ad Blocker by Taha
 // @namespace    http://tampermonkey.net/
-// @version      2.6
-// @description  Removes Adblock Thing
+// @version      1.0
+// @description  Removes Adblock Detection Alerts
 // @author       EL HADANI Taha
 // @match        https://www.youtube.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
-// @updateURL    https://github.com/YourGitHubUsername/YourRepoName/raw/main/Youtube-Anti-Ad-Blocker.user.js
-// @downloadURL  https://github.com/YourGitHubUsername/YourRepoName/raw/main/Youtube-Anti-Ad-Blocker.user.js
-// @grant        none
+// @downloadURL  https://github.com/ELHADANITAHA/Anti-Youtube-Ad-Blocker-Script/edit/main/Script.js
 // ==/UserScript==
 
 (function () {
@@ -51,7 +49,7 @@
         if (adblocker) addblocker();
         if (removePopup) popupRemover();
         if (removePopup) observer.observe(document.body, observerConfig);
-    }, 5000); // Adjust the delay as needed (5000 milliseconds in this example)
+    }, 5000); // Adjust the delay as needed (5000 milliseconds in this example) --> Changeable
 
     function popupRemover() {
         removeJsonPaths(domainsToRemove, jsonPathsToRemove);
@@ -74,7 +72,7 @@
             }
 
             if (popup) {
-                if (debug) console.log("Youtube Anti Ad Blocker by Taha: Popup detected, removing...");
+                if (debug) console.log("Youtube Anti Ad Blocker : Popup detected, removing...");
 
                 if (popupButton) popupButton.click();
                 popup.remove();
@@ -87,7 +85,7 @@
                     }, 500);
                 }
 
-                if (debug) console.log("Youtube Anti Ad Blocker by Taha: Popup removed");
+                if (debug) console.log("Youtube Anti Ad Blocker : Popup removed");
             }
 
             if (!unpausedAfterSkip > 0) return;
@@ -134,7 +132,7 @@
                 view: window
             }));
             unpausedAfterSkip = 0;
-            if (debug) console.log("Youtube Anti Ad Blocker by Taha: Unpaused video using 'k' key");
+            if (debug) console.log("Youtube Anti Ad Blocker : Unpaused video using 'k' key");
         } else if (unpausedAfterSkip > 0) unpausedAfterSkip--;
     }
 
